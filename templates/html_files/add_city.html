@@ -1,0 +1,424 @@
+<div class="city-card-setting">
+    <form action="/create_city" method="POST" class="city-form">
+        <div class="city-icon">🏙️</div>
+        <div class="city-title">Create City</div>
+        <div class="city-content">
+            <label for="cityName" class="city-label">City Name</label>
+            <input type="text" id="cityName" name="city_name" class="city-input" placeholder="Enter city name..." autocomplete="off" required>
+        </div>
+        <button type="submit" class="city-create-btn">
+            <span class="btn-check">✓</span>
+            <span>Create City</span>
+        </button>
+    </form>
+</div>
+
+
+<style>
+
+/* =====================================================
+   CITY CARD
+===================================================== */
+
+.city-card-setting {
+
+    width: 360px;
+    height: 360px;
+
+    max-width: 90vw;
+    max-height: 90vw;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.city-card-setting:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(255, 209, 102, 0.35);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.32),
+        0 0 35px rgba(255, 209, 102, 0.06);
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.city-form {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.city-icon {
+
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 102, 0.22),
+            rgba(255, 159, 67, 0.08)
+        );
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.30);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.city-card-setting:hover .city-icon {
+
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.city-title {
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.city-content {
+
+    width: 100%;
+
+    margin-top: 3px;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.city-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.city-input {
+
+    width: 100%;
+    height: 44px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 11px;
+
+    background:
+        rgba(0, 0, 0, 0.22);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.city-input::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+
+.city-input:hover {
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border-color:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+.city-input:focus {
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 209, 102, 0.60);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 209, 102, 0.08);
+}
+
+
+/* =====================================================
+   CREATE BUTTON
+===================================================== */
+
+.city-create-btn {
+
+    width: 100%;
+    height: 44px;
+
+    margin-top: 3px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.35);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 102, 0.22),
+            rgba(255, 159, 67, 0.12)
+        );
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.city-create-btn:hover {
+
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 102, 0.34),
+            rgba(255, 159, 67, 0.18)
+        );
+
+    border-color:
+        rgba(255, 209, 102, 0.60);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+
+.city-create-btn:active {
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   CHECK ICON
+===================================================== */
+
+.btn-check {
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 209, 102, 0.18);
+
+    color:
+        #ffd166;
+
+    font-size: 12px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .city-card-setting {
+
+        width: 90vw;
+        height: 90vw;
+
+        min-width: 280px;
+        min-height: 280px;
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .city-icon {
+
+        width: 56px;
+        height: 56px;
+
+        font-size: 26px;
+
+        border-radius: 16px;
+    }
+
+
+    .city-title {
+
+        font-size: 18px;
+    }
+
+
+    .city-input,
+    .city-create-btn {
+
+        height: 42px;
+    }
+}
+
+</style>
