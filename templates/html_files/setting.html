@@ -1,0 +1,2920 @@
+<!-- =====================================================
+     TIMEZONE FORM
+===================================================== -->
+
+<form
+    action="{{ url_for('set_timezone') }}"
+    method="POST"
+    class="timezone-form"
+>
+
+    <div class="timezone-card-setting">
+
+        <!-- ICON -->
+
+        <div class="current-timezone-icon">
+            🌍
+        </div>
+
+
+        <!-- TIMEZONE CONTENT -->
+
+        <div class="timezone-content">
+
+
+            <!-- NATIVE DATALIST -->
+
+            <input
+                type="text"
+                id="timezoneInput"
+                name="timezone"
+                class="timezone-input"
+                list="timezoneList"
+                placeholder="Search city, country or timezone..."
+                autocomplete="off"
+                spellcheck="false"
+            >
+
+
+            <datalist id="timezoneList">
+
+                <!-- UTC -->
+
+                <option value="UTC">Coordinated Universal Time</option>
+
+
+                <!-- AFRICA -->
+
+                <option value="Africa/Abidjan">Abidjan — Ivory Coast</option>
+                <option value="Africa/Accra">Accra — Ghana</option>
+                <option value="Africa/Addis_Ababa">Addis Ababa — Ethiopia</option>
+                <option value="Africa/Algiers">Algiers — Algeria</option>
+                <option value="Africa/Cairo">Cairo — Egypt</option>
+                <option value="Africa/Casablanca">Casablanca — Morocco</option>
+                <option value="Africa/Dar_es_Salaam">Dar es Salaam — Tanzania</option>
+                <option value="Africa/Johannesburg">Johannesburg — South Africa</option>
+                <option value="Africa/Kampala">Kampala — Uganda</option>
+                <option value="Africa/Khartoum">Khartoum — Sudan</option>
+                <option value="Africa/Lagos">Lagos — Nigeria</option>
+                <option value="Africa/Maputo">Maputo — Mozambique</option>
+                <option value="Africa/Nairobi">Nairobi — Kenya</option>
+                <option value="Africa/Tunis">Tunis — Tunisia</option>
+                <option value="Africa/Windhoek">Windhoek — Namibia</option>
+
+
+                <!-- AMERICA -->
+
+                <option value="America/Anchorage">Anchorage — Alaska</option>
+                <option value="America/Argentina/Buenos_Aires">Buenos Aires — Argentina</option>
+                <option value="America/Bogota">Bogotá — Colombia</option>
+                <option value="America/Caracas">Caracas — Venezuela</option>
+                <option value="America/Chicago">Chicago — USA</option>
+                <option value="America/Denver">Denver — USA</option>
+                <option value="America/Edmonton">Edmonton — Canada</option>
+                <option value="America/Halifax">Halifax — Canada</option>
+                <option value="America/Havana">Havana — Cuba</option>
+                <option value="America/Los_Angeles">Los Angeles — USA</option>
+                <option value="America/Mexico_City">Mexico City — Mexico</option>
+                <option value="America/New_York">New York — USA</option>
+                <option value="America/Phoenix">Phoenix — Arizona</option>
+                <option value="America/Santiago">Santiago — Chile</option>
+                <option value="America/Sao_Paulo">São Paulo — Brazil</option>
+                <option value="America/St_Johns">St. John's — Canada</option>
+                <option value="America/Toronto">Toronto — Canada</option>
+                <option value="America/Vancouver">Vancouver — Canada</option>
+
+
+                <!-- ASIA -->
+
+                <option value="Asia/Almaty">Almaty — Kazakhstan</option>
+                <option value="Asia/Amman">Amman — Jordan</option>
+                <option value="Asia/Baghdad">Baghdad — Iraq</option>
+                <option value="Asia/Baku">Baku — Azerbaijan</option>
+                <option value="Asia/Bangkok">Bangkok — Thailand</option>
+                <option value="Asia/Beirut">Beirut — Lebanon</option>
+                <option value="Asia/Colombo">Colombo — Sri Lanka</option>
+                <option value="Asia/Dhaka">Dhaka — Bangladesh</option>
+                <option value="Asia/Dubai">Dubai — UAE</option>
+                <option value="Asia/Ho_Chi_Minh">Ho Chi Minh City — Vietnam</option>
+                <option value="Asia/Hong_Kong">Hong Kong — China</option>
+                <option value="Asia/Jakarta">Jakarta — Indonesia</option>
+                <option value="Asia/Jerusalem">Jerusalem — Israel</option>
+                <option value="Asia/Kabul">Kabul — Afghanistan</option>
+                <option value="Asia/Karachi">Karachi — Pakistan</option>
+                <option value="Asia/Kathmandu">Kathmandu — Nepal</option>
+                <option value="Asia/Kolkata">India — Asia/Kolkata</option>
+                <option value="Asia/Kuala_Lumpur">Kuala Lumpur — Malaysia</option>
+                <option value="Asia/Kuwait">Kuwait</option>
+                <option value="Asia/Manila">Manila — Philippines</option>
+                <option value="Asia/Muscat">Muscat — Oman</option>
+                <option value="Asia/Riyadh">Riyadh — Saudi Arabia</option>
+                <option value="Asia/Seoul">Seoul — South Korea</option>
+                <option value="Asia/Shanghai">Shanghai — China</option>
+                <option value="Asia/Singapore">Singapore</option>
+                <option value="Asia/Taipei">Taipei — Taiwan</option>
+                <option value="Asia/Tashkent">Tashkent — Uzbekistan</option>
+                <option value="Asia/Tehran">Tehran — Iran</option>
+                <option value="Asia/Tokyo">Tokyo — Japan</option>
+                <option value="Asia/Ulaanbaatar">Ulaanbaatar — Mongolia</option>
+                <option value="Asia/Yangon">Yangon — Myanmar</option>
+
+
+                <!-- EUROPE -->
+
+                <option value="Europe/Amsterdam">Amsterdam — Netherlands</option>
+                <option value="Europe/Athens">Athens — Greece</option>
+                <option value="Europe/Belgrade">Belgrade — Serbia</option>
+                <option value="Europe/Berlin">Berlin — Germany</option>
+                <option value="Europe/Brussels">Brussels — Belgium</option>
+                <option value="Europe/Bucharest">Bucharest — Romania</option>
+                <option value="Europe/Budapest">Budapest — Hungary</option>
+                <option value="Europe/Copenhagen">Copenhagen — Denmark</option>
+                <option value="Europe/Dublin">Dublin — Ireland</option>
+                <option value="Europe/Helsinki">Helsinki — Finland</option>
+                <option value="Europe/Istanbul">Istanbul — Turkey</option>
+                <option value="Europe/Kyiv">Kyiv — Ukraine</option>
+                <option value="Europe/Lisbon">Lisbon — Portugal</option>
+                <option value="Europe/London">London — UK</option>
+                <option value="Europe/Madrid">Madrid — Spain</option>
+                <option value="Europe/Moscow">Moscow — Russia</option>
+                <option value="Europe/Oslo">Oslo — Norway</option>
+                <option value="Europe/Paris">Paris — France</option>
+                <option value="Europe/Prague">Prague — Czech Republic</option>
+                <option value="Europe/Riga">Riga — Latvia</option>
+                <option value="Europe/Rome">Rome — Italy</option>
+                <option value="Europe/Stockholm">Stockholm — Sweden</option>
+                <option value="Europe/Vienna">Vienna — Austria</option>
+                <option value="Europe/Warsaw">Warsaw — Poland</option>
+                <option value="Europe/Zurich">Zurich — Switzerland</option>
+
+
+                <!-- AUSTRALIA -->
+
+                <option value="Australia/Adelaide">Adelaide — Australia</option>
+                <option value="Australia/Brisbane">Brisbane — Australia</option>
+                <option value="Australia/Darwin">Darwin — Australia</option>
+                <option value="Australia/Hobart">Hobart — Australia</option>
+                <option value="Australia/Melbourne">Melbourne — Australia</option>
+                <option value="Australia/Perth">Perth — Australia</option>
+                <option value="Australia/Sydney">Sydney — Australia</option>
+
+
+                <!-- PACIFIC -->
+
+                <option value="Pacific/Auckland">Auckland — New Zealand</option>
+                <option value="Pacific/Fiji">Fiji</option>
+                <option value="Pacific/Guam">Guam</option>
+                <option value="Pacific/Honolulu">Honolulu — Hawaii</option>
+                <option value="Pacific/Noumea">Nouméa — New Caledonia</option>
+                <option value="Pacific/Pago_Pago">Pago Pago — American Samoa</option>
+                <option value="Pacific/Port_Moresby">Port Moresby — Papua New Guinea</option>
+                <option value="Pacific/Tahiti">Tahiti — French Polynesia</option>
+
+
+                <!-- ATLANTIC -->
+
+                <option value="Atlantic/Azores">Azores — Portugal</option>
+                <option value="Atlantic/Bermuda">Bermuda</option>
+                <option value="Atlantic/Canary">Canary Islands — Spain</option>
+                <option value="Atlantic/Cape_Verde">Cape Verde</option>
+                <option value="Atlantic/Reykjavik">Reykjavik — Iceland</option>
+
+            </datalist>
+
+        </div>
+
+
+        <!-- SAVE -->
+
+        <button
+            type="submit"
+            class="timezone-save-btn"
+        >
+            ✓ Save
+        </button>
+
+    </div>
+
+</form>
+
+
+<!-- =====================================================
+     BACKGROUND IMAGE SECTION
+===================================================== -->
+
+<div class="background-section">
+
+    <div class="settings-header">
+
+        <div class="settings-title">
+
+            <div class="title-icon">
+                🖼️
+            </div>
+
+            <div class="title-content">
+
+                <div class="title-row">
+
+                    <h2>
+                        Background Image
+                    </h2>
+
+                    <span class="image-count">
+                        {{ background_image|length }} Images
+                    </span>
+
+                </div>
+
+                <p>
+                    Choose a beautiful background for your dashboard
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="action-btn minimize-btn"
+                id="minimizeButton"
+                onclick="toggleImages()"
+                aria-expanded="true"
+                aria-controls="backgroundGrid"
+            >
+
+                <span
+                    class="btn-icon"
+                    id="toggleIcon"
+                >
+                    −
+                </span>
+
+                <span id="toggleText">
+                    Minimize
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-divider"></div>
+
+
+    <div
+        class="background-grid"
+        id="backgroundGrid"
+    >
+
+        <!-- ================= ADD IMAGE ================= -->
+
+        <div class="background-card add-background-card">
+
+            <form
+                action="{{ url_for('add_background') }}"
+                method="POST"
+                enctype="multipart/form-data"
+                class="upload-form"
+                id="uploadForm"
+            >
+
+                <label
+                    for="backgroundImageInput"
+                    class="add-image-area"
+                    id="addImageArea"
+                >
+
+                    <div class="add-image-icon">
+                        ＋
+                    </div>
+
+                    <div class="add-image-title">
+                        Add Background
+                    </div>
+
+                    <div class="add-image-text">
+                        JPG, PNG, WEBP or GIF
+                    </div>
+
+                </label>
+
+
+                <input
+                    type="file"
+                    id="backgroundImageInput"
+                    name="background"
+                    accept=".jpg,.jpeg,.png,.webp,.gif"
+                    hidden
+                    onchange="previewSelectedImage(this)"
+                >
+
+
+                <div
+                    class="upload-preview"
+                    id="uploadPreview"
+                >
+
+                    <img
+                        id="previewImage"
+                        src=""
+                        alt="Selected background preview"
+                    >
+
+                </div>
+
+
+                <div class="background-info">
+
+                    <div
+                        class="background-name"
+                        id="selectedFileName"
+                        title="No image selected"
+                    >
+                        No image selected
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="upload-btn"
+                        id="uploadButton"
+                        disabled
+                    >
+                        ⬆️ Add Image
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- ================= EXISTING IMAGES ================= -->
+
+        {% for i in background_image %}
+
+        <div class="background-card">
+
+            <div class="background-preview">
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename='background/' + i
+                    ) }}"
+                    alt="{{ i }}"
+                >
+
+                {% if selected_background == i %}
+
+                <span class="selected-badge">
+                    ✓ Selected
+                </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="background-info">
+
+                <div
+                    class="background-name"
+                    title="{{ i }}"
+                >
+                    {{ i }}
+                </div>
+
+
+                <div class="background-actions">
+
+                    <form
+                        action="{{ url_for('set_background') }}"
+                        method="POST"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="background"
+                            value="{{ i }}"
+                        >
+
+                        <button
+                            type="submit"
+                            class="set-btn"
+                            {% if selected_background == i %}
+                            disabled
+                            {% endif %}
+                        >
+
+                            {% if selected_background == i %}
+                                ✓ Selected
+                            {% else %}
+                                🖼️ Set
+                            {% endif %}
+
+                        </button>
+
+                    </form>
+
+
+                    <form
+                        action="{{ url_for('delete_background') }}"
+                        method="POST"
+                        onsubmit="return confirmDelete(this)"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="background"
+                            value="{{ i }}"
+                        >
+
+                        <button
+                            type="submit"
+                            class="delete-btn"
+                        >
+                            🗑️ Delete
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<style>
+
+    /* =====================================================
+   NATIVE TIMEZONE DATALIST
+===================================================== */
+
+.timezone-input {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 8px 12px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.timezone-input:hover {
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 209, 102, 0.35);
+
+}
+
+
+.timezone-input:focus {
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 209, 102, 0.50);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 209, 102, 0.08);
+
+}
+
+
+.timezone-input::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+}
+
+
+/* Chrome / Edge dropdown arrow */
+
+.timezone-input::-webkit-calendar-picker-indicator {
+
+    opacity: 0.7;
+
+    cursor: pointer;
+
+    filter:
+        invert(1);
+}
+
+
+/* Firefox */
+
+.timezone-input::-moz-placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+}
+
+/* =====================================================
+   TIMEZONE SECTION
+===================================================== */
+
+.timezone-section {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 102, 0.08),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =====================================================
+   COMMON HEADER
+===================================================== */
+
+.settings-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.settings-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.title-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 102, 0.16),
+            rgba(255, 255, 255, 0.08)
+        );
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.18);
+
+}
+
+
+.title-content {
+
+    min-width: 0;
+
+}
+
+
+.title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.title-row h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+.title-content p {
+
+    margin: 5px 0 0;
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+}
+
+
+.image-count {
+
+    max-width: 220px;
+
+    padding: 4px 9px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 209, 102, 0.12);
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.20);
+
+}
+
+
+.section-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 18px 0;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.timezone-form {
+
+    width: 100%;
+
+    margin: 0;
+
+}
+
+
+/* =====================================================
+   TIMEZONE CARD
+===================================================== */
+
+.timezone-card-setting {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 90px;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(0, 0, 0, 0.22);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.timezone-card-setting:hover {
+
+    border-color:
+        rgba(255, 209, 102, 0.28);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.current-timezone-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 209, 102, 0.22),
+            rgba(255, 159, 67, 0.12)
+        );
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.25);
+
+    font-size: 21px;
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.timezone-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.timezone-label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   CUSTOM SELECTOR
+===================================================== */
+
+.timezone-selector {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+.timezone-selected {
+
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 8px 12px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.timezone-selected:hover,
+.timezone-selected:focus {
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(255, 209, 102, 0.40);
+
+}
+
+
+.timezone-selector.open
+.timezone-selected {
+
+    border-color:
+        rgba(255, 209, 102, 0.50);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 209, 102, 0.08);
+
+}
+
+
+.selected-timezone-text {
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.timezone-arrow {
+
+    flex-shrink: 0;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 16px;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.timezone-selector.open
+.timezone-arrow {
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.timezone-dropdown {
+
+    position: absolute;
+
+    z-index: 9999;
+
+    top: calc(100% + 7px);
+
+    left: 0;
+
+    width: 100%;
+
+    display: none;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 12px;
+
+    background:
+        rgba(25, 25, 30, 0.97);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.45);
+
+}
+
+
+.timezone-selector.open
+.timezone-dropdown {
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.timezone-search-box {
+
+    position: relative;
+
+    padding: 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+}
+
+
+.timezone-search-icon {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 20px;
+
+    transform: translateY(-50%);
+
+    font-size: 13px;
+
+    pointer-events: none;
+
+}
+
+
+.timezone-search {
+
+    width: 100%;
+
+    min-height: 38px;
+
+    padding: 8px 35px 8px 36px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+}
+
+
+.timezone-search::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+}
+
+
+.timezone-search:focus {
+
+    border-color:
+        rgba(255, 209, 102, 0.45);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 209, 102, 0.06);
+
+}
+
+
+.timezone-clear {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 18px;
+
+    transform: translateY(-50%);
+
+    width: 24px;
+
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        transparent;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+
+.timezone-clear:hover {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.timezone-options {
+
+    max-height: 330px;
+
+    overflow-y: auto;
+
+    padding: 6px;
+
+}
+
+
+/* SCROLLBAR */
+
+.timezone-options::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+
+.timezone-options::-webkit-scrollbar-track {
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+}
+
+
+.timezone-options::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.20);
+
+}
+
+
+.timezone-options::-webkit-scrollbar-thumb:hover {
+
+    background:
+        rgba(255, 255, 255, 0.32);
+
+}
+
+
+/* =====================================================
+   GROUP
+===================================================== */
+
+.timezone-group {
+
+    margin-bottom: 5px;
+
+}
+
+
+.timezone-group:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.timezone-group-title {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+    padding: 7px 9px;
+
+    color:
+        #ffd166;
+
+    background:
+        rgba(25, 25, 30, 0.96);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+}
+
+
+/* =====================================================
+   OPTION
+===================================================== */
+
+.timezone-option {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 9px 10px;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease;
+
+}
+
+
+.timezone-option:hover {
+
+    background:
+        rgba(255, 209, 102, 0.12);
+
+}
+
+
+.timezone-option.selected {
+
+    background:
+        rgba(255, 209, 102, 0.16);
+
+}
+
+
+.option-city {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.option-zone {
+
+    flex-shrink: 0;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.timezone-no-results {
+
+    display: none;
+
+    padding: 35px 15px;
+
+    text-align: center;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+
+    font-size: 12px;
+
+}
+
+
+.timezone-no-results span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   CURRENT TIME
+===================================================== */
+
+.timezone-current {
+
+    min-width: 95px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 3px;
+
+}
+
+
+.current-label {
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+
+}
+
+
+.current-time {
+
+    color: #ffd166;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.timezone-save-btn {
+
+    flex-shrink: 0;
+
+    min-height: 40px;
+
+    padding: 8px 15px;
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.25);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 209, 102, 0.10);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.timezone-save-btn:hover {
+
+    background:
+        rgba(255, 209, 102, 0.20);
+
+    border-color:
+        rgba(255, 209, 102, 0.40);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .timezone-card-setting {
+
+        align-items: stretch;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .timezone-content {
+
+        min-width: calc(100% - 60px);
+
+    }
+
+
+    .timezone-current {
+
+        align-items: flex-start;
+
+        width: 100%;
+
+        padding-left: 58px;
+
+    }
+
+
+    .timezone-save-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .timezone-section {
+
+        padding: 16px;
+
+    }
+
+
+    .settings-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .title-row {
+
+        flex-wrap: wrap;
+
+    }
+
+
+
+
+    .current-timezone-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 18px;
+
+    }
+
+
+    .timezone-content {
+
+        min-width: calc(100% - 50px);
+
+    }
+
+
+    .timezone-current {
+
+        padding-left: 0;
+
+    }
+
+}
+
+/* =====================================================
+   BACKGROUND SECTION
+===================================================== */
+
+.background-section {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =====================================================
+   HEADER BUTTON
+===================================================== */
+
+.header-actions {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.action-btn {
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.17);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: 0.2s ease;
+
+}
+
+.action-btn:hover {
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    transform:
+        translateY(-1px);
+
+}
+
+.btn-icon {
+
+    font-size: 16px;
+    line-height: 1;
+
+}
+
+
+/* =====================================================
+   BACKGROUND GRID
+===================================================== */
+
+.background-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, 280px);
+
+    gap: 25px;
+
+    justify-content: start;
+
+    max-height: 5000px;
+
+    opacity: 1;
+
+    overflow: hidden;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.25s ease;
+
+}
+
+.background-grid.minimized {
+
+    max-height: 0;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   BACKGROUND CARD
+===================================================== */
+
+.background-card {
+
+    width: 280px;
+
+    height: 180px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 13px;
+
+    background:
+        rgba(0, 0, 0, 0.22);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+.background-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255, 209, 102, 0.25);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.background-preview {
+
+    position: relative;
+
+    width: 100%;
+    height: 95px;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+.background-preview img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+.background-card:hover
+.background-preview img {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+/* =====================================================
+   SELECTED BADGE
+===================================================== */
+
+.selected-badge {
+
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.70);
+
+    color: #ffd166;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+/* =====================================================
+   BACKGROUND INFORMATION
+===================================================== */
+
+.background-info {
+
+    height: 85px;
+
+    padding: 11px 8px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+.background-name {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   BACKGROUND ACTIONS
+===================================================== */
+
+.background-actions {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 6px;
+
+}
+
+.background-actions form {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.set-btn,
+.delete-btn {
+
+    width: 100%;
+
+    min-height: 27px;
+
+    padding: 5px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+/* SET */
+
+.set-btn {
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    color: #ffffff;
+
+}
+
+.set-btn:hover:not(:disabled) {
+
+    background:
+        rgba(255, 209, 102, 0.18);
+
+    border-color:
+        rgba(255, 209, 102, 0.35);
+
+}
+
+.set-btn:disabled {
+
+    cursor: default;
+
+    opacity: 0.55;
+
+}
+
+
+/* DELETE */
+
+.delete-btn {
+
+    border:
+        1px solid
+        rgba(255, 80, 80, 0.30);
+
+    background:
+        rgba(255, 60, 60, 0.09);
+
+    color: #ffb0b0;
+
+}
+
+.delete-btn:hover {
+
+    background:
+        rgba(255, 60, 60, 0.22);
+
+    color: #ffffff;
+
+}
+
+
+/* =====================================================
+   ADD BACKGROUND
+===================================================== */
+
+.add-background-card {
+
+    border:
+        1px dashed
+        rgba(255, 209, 102, 0.30);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+}
+
+.upload-form {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.add-image-area {
+
+    width: 100%;
+    height: 95px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    transition:
+        background 0.2s ease;
+
+}
+
+.add-image-area:hover {
+
+    background:
+        rgba(255, 209, 102, 0.08);
+
+}
+
+.add-image-icon {
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 5px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.30);
+
+    background:
+        rgba(255, 209, 102, 0.10);
+
+    color: #ffd166;
+
+    font-size: 22px;
+
+}
+
+.add-image-title {
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.add-image-text {
+
+    margin-top: 3px;
+
+    color:
+        rgba(255, 255, 255, 0.45);
+
+    font-size: 9px;
+
+}
+
+.upload-preview {
+
+    display: none;
+
+    width: 100%;
+    height: 95px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: #111;
+
+}
+
+.upload-preview img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+.upload-btn {
+
+    width: 100%;
+
+    min-height: 27px;
+
+    padding: 5px 7px;
+
+    border:
+        1px solid
+        rgba(255, 209, 102, 0.25);
+
+    border-radius: 7px;
+
+    background:
+        rgba(255, 209, 102, 0.10);
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+.upload-btn:hover:not(:disabled) {
+
+    background:
+        rgba(255, 209, 102, 0.20);
+
+}
+
+.upload-btn:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+}
+
+/* =====================================================
+   BACKGROUND RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .background-section {
+        padding: 15px;
+    }
+
+    .background-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .background-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .background-section .settings-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .background-section .header-actions {
+        width: 100%;
+    }
+
+    .background-section .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .background-section .title-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .background-section .title-row h2 {
+        font-size: 18px;
+    }
+}
+
+</style>
+
+<script>
+
+/* =====================================================
+   TIMEZONE SELECTOR
+===================================================== */
+
+(function () {
+
+    const selector =
+        document.getElementById("timezoneSelector");
+
+    const selected =
+        document.getElementById("timezoneSelected");
+
+    const dropdown =
+        document.getElementById("timezoneDropdown");
+
+    const search =
+        document.getElementById("timezoneSearch");
+
+    const clear =
+        document.getElementById("timezoneClear");
+
+    const hiddenValue =
+        document.getElementById("timezoneValue");
+
+    const selectedText =
+        document.getElementById("selectedTimezoneText");
+
+    const options =
+        document.querySelectorAll(".timezone-option");
+
+    const groups =
+        document.querySelectorAll(".timezone-group");
+
+    const noResults =
+        document.getElementById("timezoneNoResults");
+
+
+    if (
+        !selector ||
+        !selected ||
+        !dropdown ||
+        !search ||
+        !hiddenValue
+    ) {
+
+        return;
+
+    }
+
+
+    /* ==============================================
+       OPEN / CLOSE
+    ============================================== */
+
+    function openDropdown() {
+
+        selector.classList.add("open");
+
+        selected.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        setTimeout(function () {
+
+            search.focus();
+
+        }, 50);
+
+    }
+
+
+    function closeDropdown() {
+
+        selector.classList.remove("open");
+
+        selected.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+
+    selected.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            if (
+                selector.classList.contains("open")
+            ) {
+
+                closeDropdown();
+
+            } else {
+
+                openDropdown();
+
+            }
+
+        }
+    );
+
+
+    selected.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                event.preventDefault();
+
+                if (
+                    selector.classList.contains("open")
+                ) {
+
+                    closeDropdown();
+
+                } else {
+
+                    openDropdown();
+
+                }
+
+            }
+
+            if (event.key === "Escape") {
+
+                closeDropdown();
+
+            }
+
+        }
+    );
+
+
+    /* ==============================================
+       SELECT CURRENT VALUE
+    ============================================== */
+
+    function selectTimezone(option) {
+
+        const value =
+            option.dataset.value;
+
+        const city =
+            option.querySelector(
+                ".option-city"
+            );
+
+        const zone =
+            option.querySelector(
+                ".option-zone"
+            );
+
+
+        if (!value) {
+            return;
+        }
+
+
+        hiddenValue.value =
+            value;
+
+
+        if (city && zone) {
+
+            selectedText.textContent =
+                city.textContent.trim() +
+                " — " +
+                zone.textContent.trim();
+
+        } else {
+
+            selectedText.textContent =
+                value;
+
+        }
+
+
+        options.forEach(function (item) {
+
+            item.classList.remove(
+                "selected"
+            );
+
+        });
+
+
+        option.classList.add(
+            "selected"
+        );
+
+
+        search.value = "";
+
+        filterTimezones();
+
+        closeDropdown();
+
+        updateSettingsClock();
+
+    }
+
+
+    options.forEach(function (option) {
+
+        option.addEventListener(
+            "click",
+            function () {
+
+                selectTimezone(option);
+
+            }
+        );
+
+    });
+
+
+    /* ==============================================
+       SEARCH
+    ============================================== */
+
+    function filterTimezones() {
+
+        const query =
+            search.value
+                .toLowerCase()
+                .trim();
+
+
+        let visibleCount = 0;
+
+
+        options.forEach(function (option) {
+
+            const searchText =
+                (
+                    option.dataset.search ||
+                    ""
+                ).toLowerCase();
+
+
+            const value =
+                (
+                    option.dataset.value ||
+                    ""
+                ).toLowerCase();
+
+
+            const text =
+                (
+                    option.textContent ||
+                    ""
+                ).toLowerCase();
+
+
+            const matches =
+                !query ||
+                searchText.includes(query) ||
+                value.includes(query) ||
+                text.includes(query);
+
+
+            if (matches) {
+
+                option.style.display =
+                    "flex";
+
+                visibleCount++;
+
+            } else {
+
+                option.style.display =
+                    "none";
+
+            }
+
+        });
+
+
+        groups.forEach(function (group) {
+
+            const groupOptions =
+                group.querySelectorAll(
+                    ".timezone-option"
+                );
+
+
+            let hasVisible =
+                false;
+
+
+            groupOptions.forEach(
+                function (option) {
+
+                    if (
+                        option.style.display !==
+                        "none"
+                    ) {
+
+                        hasVisible = true;
+
+                    }
+
+                }
+            );
+
+
+            group.style.display =
+                hasVisible
+                    ? "block"
+                    : "none";
+
+        });
+
+
+        if (visibleCount === 0) {
+
+            noResults.style.display =
+                "block";
+
+        } else {
+
+            noResults.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    search.addEventListener(
+        "input",
+        filterTimezones
+    );
+
+
+    /* ==============================================
+       CLEAR SEARCH
+    ============================================== */
+
+    clear.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            search.value = "";
+
+            filterTimezones();
+
+            search.focus();
+
+        }
+    );
+
+
+    /* ==============================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ============================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !selector.contains(event.target)
+            ) {
+
+                closeDropdown();
+
+            }
+
+        }
+    );
+
+
+    /* ==============================================
+       ESCAPE
+    ============================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeDropdown();
+
+            }
+
+        }
+    );
+
+
+    /* ==============================================
+       MARK CURRENT TIMEZONE
+    ============================================== */
+
+    const currentTimezone =
+        hiddenValue.value;
+
+
+    options.forEach(function (option) {
+
+        if (
+            option.dataset.value ===
+            currentTimezone
+        ) {
+
+            option.classList.add(
+                "selected"
+            );
+
+            const city =
+                option.querySelector(
+                    ".option-city"
+                );
+
+            const zone =
+                option.querySelector(
+                    ".option-zone"
+                );
+
+
+            if (city && zone) {
+
+                selectedText.textContent =
+                    city.textContent.trim() +
+                    " — " +
+                    zone.textContent.trim();
+
+            }
+
+        }
+
+    });
+
+
+    /* ==============================================
+       CURRENT TIME
+    ============================================== */
+
+    window.updateSettingsClock =
+        function () {
+
+            const clock =
+                document.getElementById(
+                    "settingsClock"
+                );
+
+
+            if (!clock) {
+                return;
+            }
+
+
+            const timezone =
+                hiddenValue.value ||
+                "Asia/Kolkata";
+
+
+            try {
+
+                const now =
+                    new Date();
+
+
+                const formatted =
+                    new Intl.DateTimeFormat(
+                        "en-IN",
+                        {
+                            timeZone: timezone,
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            second: "2-digit",
+                            hour12: true
+                        }
+                    ).format(now);
+
+
+                clock.textContent =
+                    formatted;
+
+            } catch (error) {
+
+                clock.textContent =
+                    new Date().toLocaleTimeString();
+
+            }
+
+        };
+
+
+    updateSettingsClock();
+
+
+    setInterval(
+        updateSettingsClock,
+        1000
+    );
+
+})();
+
+/* =====================================================
+   MINIMIZE / EXPAND BACKGROUND
+===================================================== */
+
+function toggleImages() {
+
+    const grid =
+        document.getElementById(
+            "backgroundGrid"
+        );
+
+    const button =
+        document.getElementById(
+            "minimizeButton"
+        );
+
+    const icon =
+        document.getElementById(
+            "toggleIcon"
+        );
+
+    const text =
+        document.getElementById(
+            "toggleText"
+        );
+
+
+    if (
+        !grid ||
+        !button ||
+        !icon ||
+        !text
+    ) {
+
+        return;
+
+    }
+
+
+    const isMinimized =
+        grid.classList.toggle(
+            "minimized"
+        );
+
+
+    if (isMinimized) {
+
+        icon.textContent = "+";
+
+        text.textContent = "Expand";
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+    else {
+
+        icon.textContent = "−";
+
+        text.textContent = "Minimize";
+
+        button.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+function previewSelectedImage(input) {
+
+    const preview =
+        document.getElementById(
+            "uploadPreview"
+        );
+
+    const previewImage =
+        document.getElementById(
+            "previewImage"
+        );
+
+    const fileName =
+        document.getElementById(
+            "selectedFileName"
+        );
+
+    const uploadButton =
+        document.getElementById(
+            "uploadButton"
+        );
+
+    const addArea =
+        document.getElementById(
+            "addImageArea"
+        );
+
+
+    if (
+        !preview ||
+        !previewImage ||
+        !fileName ||
+        !uploadButton ||
+        !addArea
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        !input.files ||
+        !input.files.length
+    ) {
+
+        preview.style.display =
+            "none";
+
+        addArea.style.display =
+            "flex";
+
+        previewImage.src = "";
+
+        fileName.textContent =
+            "No image selected";
+
+        fileName.title =
+            "No image selected";
+
+        uploadButton.disabled =
+            true;
+
+        return;
+
+    }
+
+
+    const file =
+        input.files[0];
+
+
+    const allowedTypes = [
+
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "image/gif"
+
+    ];
+
+
+    if (
+        !allowedTypes.includes(
+            file.type
+        )
+    ) {
+
+        alert(
+            "Please select JPG, PNG, WEBP or GIF image."
+        );
+
+        input.value = "";
+
+        preview.style.display =
+            "none";
+
+        addArea.style.display =
+            "flex";
+
+        previewImage.src = "";
+
+        fileName.textContent =
+            "No image selected";
+
+        fileName.title =
+            "No image selected";
+
+        uploadButton.disabled =
+            true;
+
+        return;
+
+    }
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function (event) {
+
+            previewImage.src =
+                event.target.result;
+
+            preview.style.display =
+                "block";
+
+            addArea.style.display =
+                "none";
+
+            fileName.textContent =
+                file.name;
+
+            fileName.title =
+                file.name;
+
+            uploadButton.disabled =
+                false;
+
+        };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* =====================================================
+   DELETE CONFIRMATION
+===================================================== */
+
+function confirmDelete(form) {
+
+    const input =
+        form.querySelector(
+            'input[name="background"]'
+        );
+
+
+    const filename =
+        input
+            ? input.value
+            : "this image";
+
+
+    return confirm(
+        "Are you sure you want to delete " +
+        filename +
+        "?"
+    );
+
+}
+
+</script>
