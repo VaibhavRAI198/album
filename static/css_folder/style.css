@@ -1,3 +1,7 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +20,10 @@ body {
     flex-direction: column;
 }
 
-/*--Header--*/
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header {
     width: 100%;
@@ -24,25 +31,37 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     padding: 10px 75px;
+
     background:
         linear-gradient(
             135deg,
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.22)
         );
+
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius:0px 0px 30px 30px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 0 0 30px 30px;
 }
 
-/*--LEFT SIDE--*/
+
+/* =====================================================
+   HEADER LEFT
+===================================================== */
+
 .header-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-}/* =====================================================
-   STYLISH COMPACT TIMEZONE CARD
+}
+
+
+/* =====================================================
+   TIMEZONE CARD
 ===================================================== */
 
 .timezone-card {
@@ -53,6 +72,7 @@ body {
 
     max-width: 220px;
     min-width: 155px;
+
     height: 50px;
 
     padding: 5px 10px;
@@ -112,7 +132,7 @@ body {
 }
 
 
-/* Small decorative glow */
+/* Decorative glow */
 
 .timezone-card::after {
     content: "";
@@ -182,9 +202,7 @@ body {
 }
 
 
-/* =====================================================
-   CURRENT TIME LABEL
-===================================================== */
+/* Current time label */
 
 .timezone-label {
     grid-column: 1 / -1;
@@ -204,9 +222,7 @@ body {
 }
 
 
-/* =====================================================
-   TIMEZONE NAME
-===================================================== */
+/* Timezone name */
 
 .timezone-name {
     font-size: 9px;
@@ -232,9 +248,7 @@ body {
 }
 
 
-/* =====================================================
-   LIVE CLOCK
-===================================================== */
+/* Clock */
 
 .clock {
     justify-self: end;
@@ -259,11 +273,14 @@ body {
         text-shadow 0.25s ease;
 }
 
-.timezone-icon{
-    font-size:25px;
-    padding:5px 8px;
+
+.timezone-icon {
+    font-size: 25px;
+    padding: 5px 8px;
 }
-/* Clock glow on card hover */
+
+
+/* Clock glow */
 
 .timezone-card:hover .clock {
     color: #ffd166;
@@ -274,11 +291,13 @@ body {
 }
 
 
+/* =====================================================
+   HEADER MENU
+===================================================== */
+
 .header-menu {
     display: flex;
-
     gap: 5px;
-
     width: auto;
 }
 
@@ -299,7 +318,6 @@ body {
     text-decoration: none;
 
     font-size: 10px;
-
     font-weight: bold;
 
     background:
@@ -332,133 +350,200 @@ body {
 
 .button-icon {
     font-size: 14px;
-
     line-height: 1;
 }
-/*--RIGHT SIDE--*/
+
+
+/* =====================================================
+   RIGHT HEADER
+===================================================== */
+
 .right-header {
     text-align: right;
+
     display: flex;
     flex-direction: column;
+
     align-items: flex-end;
+
     position: relative;
-    padding: 8px 50px 8px 50px;
-    border-right: 2px solid rgba(255, 255, 255, 0.35);
+
+    padding: 8px 50px;
+
+    border-right:
+        2px solid rgba(255, 255, 255, 0.35);
+
     background:
         linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.10),
             rgba(255, 255, 255, 0.025)
         );
+
     border-radius: 14px;
+
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
     transition:
         transform 0.35s ease,
         background 0.35s ease,
         box-shadow 0.35s ease;
 }
 
+
 .right-header:hover {
     transform: translateY(-2px);
+
     background:
         linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.15),
             rgba(255, 255, 255, 0.04)
         );
+
     box-shadow:
         0 12px 32px rgba(0, 0, 0, 0.22),
         inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
+
+/* =====================================================
+   TRAVEL LABEL
+===================================================== */
+
 .travel-label {
     font-family: 'Poppins', sans-serif;
+
     font-size: 8px;
     font-weight: 600;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
     margin-bottom: 5px;
+
     position: relative;
+
     padding-right: 2px;
-    text-shadow:0 2px 5px rgba(0, 0, 0, 0.3);
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.3);
+
     opacity: 0.75;
+
     transition:
         opacity 0.3s ease,
         letter-spacing 0.3s ease;
 }
+
 
 .right-header:hover .travel-label {
     opacity: 1;
     letter-spacing: 4.5px;
 }
 
+
+/* =====================================================
+   LOGO
+===================================================== */
+
 .logo {
     font-family: 'Bungee', cursive;
+
     font-size: 38px;
     font-weight: 400;
+
     letter-spacing: 3px;
     line-height: 1;
+
     position: relative;
+
     display: inline-block;
-    background: linear-gradient(
-        120deg,
-        #ffffff 0%,
-        #fff8dc 22%,
-        #ffd166 48%,
-        #ff9f43 72%,
-        #ffffff 100%
-    );
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff 0%,
+            #fff8dc 22%,
+            #ffd166 48%,
+            #ff9f43 72%,
+            #ffffff 100%
+        );
+
     background-size: 200% auto;
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
     filter:
         drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35))
         drop-shadow(0 0 8px rgba(255, 193, 7, 0.12));
+
     transition:
         transform 0.35s ease,
         letter-spacing 0.35s ease,
         filter 0.35s ease;
+
     animation: logoShine 5s linear infinite;
 }
 
+
 @keyframes logoShine {
+
     0% {
         background-position: 200% center;
     }
+
     100% {
         background-position: -200% center;
     }
 }
 
+
 .logo::after {
     content: "✈";
+
     position: absolute;
+
     right: -29px;
     top: -10px;
+
     font-family: Arial, sans-serif;
+
     font-size: 18px;
+
     color: #ffffff;
     -webkit-text-fill-color: #ffffff;
+
     transform: rotate(-18deg);
+
     filter:
         drop-shadow(0 3px 5px rgba(0, 0, 0, 0.45))
         drop-shadow(0 0 5px rgba(255, 255, 255, 0.25));
+
     animation: fly 2.5s ease-in-out infinite;
 }
 
+
 @keyframes fly {
+
     0%,
     100% {
         transform:
             translate(0, 0)
             rotate(-18deg);
     }
+
     50% {
         transform:
             translate(5px, -5px)
@@ -466,185 +551,322 @@ body {
     }
 }
 
+
 .logo:hover {
     transform:
         translateY(-3px)
         scale(1.05);
+
     letter-spacing: 4px;
+
     filter:
         drop-shadow(0 6px 10px rgba(0, 0, 0, 0.4))
         drop-shadow(0 0 16px rgba(255, 193, 7, 0.45));
 }
 
+
+/* =====================================================
+   ALBUM TITLE
+===================================================== */
+
 .album-title {
     font-family: 'Poppins', sans-serif;
+
     font-size: 17px;
     font-weight: 600;
+
     letter-spacing: 2.5px;
+
     text-transform: uppercase;
+
     color: #ffffff;
+
     margin-top: 9px;
+
     padding: 0 3px 8px;
+
     position: relative;
+
     display: inline-block;
-    text-shadow:0 2px 6px rgba(0, 0, 0, 0.35);
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35);
+
     transition:
         transform 0.3s ease,
         letter-spacing 0.3s ease,
         text-shadow 0.3s ease;
 }
 
+
 .album-title::after {
     content: "";
+
     position: absolute;
+
     left: 50%;
     bottom: 0;
+
     width: 42px;
     height: 3px;
+
     transform: translateX(-50%);
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #ffffff 20%,
-        #ffd166 50%,
-        #ffffff 80%,
-        transparent
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff 20%,
+            #ffd166 50%,
+            #ffffff 80%,
+            transparent
+        );
+
     border-radius: 20px;
+
     box-shadow:
         0 0 8px rgba(255, 209, 102, 0.5);
+
     transition:
         width 0.4s ease,
         box-shadow 0.4s ease;
 }
 
+
 .album-title::before {
     content: "•";
+
     position: absolute;
+
     left: -12px;
     bottom: 3px;
+
     font-size: 10px;
+
     color: #ffd166;
+
     opacity: 0.8;
 }
 
+
 .album-title:hover {
     transform: translateY(-2px);
+
     letter-spacing: 3px;
+
     text-shadow:
         0 3px 10px rgba(0, 0, 0, 0.4),
         0 0 8px rgba(255, 255, 255, 0.2);
 }
 
+
 .album-title:hover::after {
     width: 100%;
-    box-shadow:0 0 14px rgba(255, 209, 102, 0.7);
+
+    box-shadow:
+        0 0 14px rgba(255, 209, 102, 0.7);
 }
+
+
+/* =====================================================
+   AUTHOR
+===================================================== */
 
 .author {
     display: flex;
+
     align-items: center;
     justify-content: flex-end;
+
     gap: 7px;
+
     margin-top: 7px;
+
     font-family: 'Poppins', sans-serif;
+
     font-size: 10px;
     font-weight: 400;
     font-style: italic;
+
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.85);
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.3);
+
     opacity: 0.85;
+
     transition:
         opacity 0.3s ease,
         transform 0.3s ease;
 }
+
 
 .author:hover {
     opacity: 1;
     transform: translateX(-2px);
 }
 
+
 .author-line {
     width: 22px;
     height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.8)
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.8)
+        );
+
     border-radius: 10px;
-    box-shadow:0 0 5px rgba(255, 255, 255, 0.2);
-    transition:width 0.3s ease;
+
+    box-shadow:
+        0 0 5px rgba(255, 255, 255, 0.2);
+
+    transition:
+        width 0.3s ease;
 }
+
 
 .author:hover .author-line {
     width: 32px;
 }
 
-/*--Button area--*/
+
+/* =====================================================
+   CITY AREA
+===================================================== */
 
 .city-layout {
     display: flex;
+
     align-items: flex-start;
+
     gap: 10px;
+
     width: 100%;
 }
 
+
+/* =====================================================
+   MOBILE MENU BUTTON
+   Hidden on desktop
+===================================================== */
+
+.mobile-city-menu-btn {
+    display: none;
+}
+
+
+/* =====================================================
+   CITY PANEL
+===================================================== */
+
 .button-panel {
     position: relative;
+
     width: 220px;
     height: 77vh;
+
     margin: 15px 5px;
-    border: 1px solid rgba(255, 255, 255, 0.50);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.50);
+
     border-radius: 16px;
-    background: rgba(15, 15, 15, 0.2);
+
+    background:
+        rgba(15, 15, 15, 0.2);
+
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
+
     box-sizing: border-box;
-    box-shadow:0 8px 25px rgba(0, 0, 0, 0.40);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.40);
 }
+
+
+/* =====================================================
+   CITY TITLE
+===================================================== */
 
 .container-title {
     position: absolute;
+
     top: -13px;
     left: 20px;
+
     padding: 4px 18px;
-    background: rgba(17, 17, 17, 0.92);
+
+    background:
+        rgba(17, 17, 17, 0.92);
+
     color: #ffd166;
+
     font-size: 14px;
     font-weight: 600;
+
     letter-spacing: 1px;
-    border: 1px solid #ffd166;
+
+    border:
+        1px solid #ffd166;
+
     border-radius: 20px;
+
     z-index: 10;
+
     white-space: nowrap;
-    box-shadow:0 4px 12px rgba(0, 0, 0, 0.35);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.35);
 }
+
+
+/* =====================================================
+   CITY BUTTON AREA
+===================================================== */
 
 .button_area {
     width: 100%;
     height: 100%;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     gap: 9px;
+
     padding: 25px 10px 15px;
+
     box-sizing: border-box;
+
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+
+/* Scrollbar */
 
 .button_area::-webkit-scrollbar {
     width: 5px;
 }
 
 .button_area::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.15);
+    background:
+        rgba(0, 0, 0, 0.15);
 }
 
 .button_area::-webkit-scrollbar-thumb {
-    background: rgba(255, 209, 102, 0.45);
+    background:
+        rgba(255, 209, 102, 0.45);
+
     border-radius: 10px;
 }
 
@@ -652,29 +874,51 @@ body {
     background: #ffd166;
 }
 
+
+/* =====================================================
+   CITY BUTTON
+===================================================== */
+
 .add-city-btn {
     width: 100%;
+
     min-height: 46px;
+
     flex-shrink: 0;
+
     display: flex;
+
     align-items: center;
     justify-content: flex-start;
+
     gap: 10px;
+
     padding: 10px 12px;
-    border: 1px solid rgba(255, 184, 77, 0.35);
+
+    border:
+        1px solid rgba(255, 184, 77, 0.35);
+
     border-radius: 11px;
+
     background:
         linear-gradient(
             135deg,
             rgba(255, 159, 67, 0.28),
             rgba(255, 107, 53, 0.16)
         );
+
     color: #ffe6b0;
+
     font-size: 14px;
     font-weight: 600;
+
     letter-spacing: 0.2px;
+
     cursor: pointer;
-    box-shadow:0 4px 12px rgba(255, 107, 53, 0.08);
+
+    box-shadow:
+        0 4px 12px rgba(255, 107, 53, 0.08);
+
     transition:
         transform 0.25s ease,
         background 0.25s ease,
@@ -683,6 +927,7 @@ body {
         color 0.25s ease;
 }
 
+
 .add-city-btn:hover {
     background:
         linear-gradient(
@@ -690,58 +935,134 @@ body {
             rgba(255, 193, 92, 0.48),
             rgba(255, 107, 53, 0.30)
         );
+
     border-color: #ffd166;
+
     color: #ffffff;
+
     transform: translateX(4px);
+
     box-shadow:
         0 6px 20px rgba(255, 159, 67, 0.20);
 }
 
+
 .add-city-btn:active {
-    transform: translateX(2px) scale(0.98);
-    box-shadow:0 3px 10px rgba(255, 159, 67, 0.15);
+    transform:
+        translateX(2px)
+        scale(0.98);
+
+    box-shadow:
+        0 3px 10px rgba(255, 159, 67, 0.15);
 }
+
+
+/* =====================================================
+   PLUS ICON
+===================================================== */
 
 .plus-icon {
     width: 27px;
     height: 27px;
+
     flex-shrink: 0;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
+
     background:
         linear-gradient(
             135deg,
             #ffd166,
             #ff9f43
         );
+
     color: #171717;
+
     font-size: 18px;
     font-weight: 700;
-    box-shadow:0 3px 8px rgba(255, 159, 67, 0.25);
+
+    box-shadow:
+        0 3px 8px rgba(255, 159, 67, 0.25);
+
     transition:
         transform 0.25s ease,
         background 0.25s ease;
 }
 
+
 .add-city-btn:hover .plus-icon {
     transform: rotate(90deg);
+
     background:
         linear-gradient(
             135deg,
             #ffe08a,
             #ffb347
         );
-    box-shadow:0 4px 12px rgba(255, 209, 102, 0.35);
+
+    box-shadow:
+        0 4px 12px rgba(255, 209, 102, 0.35);
 }
+
+
+/* =====================================================
+   CITY LOCATION ICON
+===================================================== */
+
+.city-button-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 209, 102, 0.12);
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   CITY NAME
+===================================================== */
+
+.city-button-name {
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   DATA CONTAINER
+===================================================== */
 
 .data_container {
     flex: 1;
+
     height: 77vh;
+
     margin: 15px 5px;
-    border: 1px solid rgba(255, 255, 255, 0.40);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.40);
+
     border-radius: 16px;
+
     background:
         linear-gradient(
             145deg,
@@ -753,6 +1074,7 @@ body {
     -webkit-backdrop-filter: blur(2px);
 
     padding: 20px;
+
     box-sizing: border-box;
 
     box-shadow:
@@ -764,142 +1086,727 @@ body {
 
     overflow-y: scroll;
 
-    /* Firefox */
     scrollbar-width: thin;
+
     scrollbar-color:
         rgba(255, 209, 102, 0.65)
         transparent;
 }
 
+
+/* =====================================================
+   DATA CONTAINER SCROLLBAR
+===================================================== */
+
 .data_container::-webkit-scrollbar {
     width: 6px;
 }
 
 .data_container::-webkit-scrollbar-track {
     background: transparent;
+
     margin: 8px 0;
 }
 
 .data_container::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 209, 102, 0.75),
-        rgba(255, 165, 0, 0.55)
-    );
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 209, 102, 0.75),
+            rgba(255, 165, 0, 0.55)
+        );
 
     border-radius: 10px;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
 }
 
 .data_container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 225, 140, 0.95),
-        rgba(255, 170, 0, 0.85)
-    );
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 225, 140, 0.95),
+            rgba(255, 170, 0, 0.85)
+        );
 
     box-shadow:
         0 0 8px rgba(255, 209, 102, 0.45);
 }
 
-.data_container {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 209, 102, 0.65) transparent;
-}
-
-/* Chrome / Edge / Safari */
-.data_container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.data_container::-webkit-scrollbar-track {
-    background: transparent;
-    margin: 8px 0;
-}
-
-.data_container::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 209, 102, 0.75),
-        rgba(255, 165, 0, 0.55)
-    );
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.data_container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        180deg,
-        rgba(255, 225, 140, 0.95),
-        rgba(255, 170, 0, 0.85)
-    );
-    box-shadow:
-        0 0 8px rgba(255, 209, 102, 0.45);
-}
 
 .data_container.disable-scroll {
     overflow-y: hidden !important;
 }
 
-/*--Mobile--*/
+
+/* =====================================================
+   MOBILE RESPONSIVE DESIGN
+===================================================== */
+
 @media (max-width: 700px) {
+
+
+    /* =================================================
+       HEADER
+    ================================================= */
+
     .header {
-        padding: 12px 15px;
+        padding: 10px 12px;
+
+        min-height: 75px;
+
+        border-radius:
+            0 0 18px 18px;
     }
+
+
+    /* =================================================
+       LEFT HEADER
+    ================================================= */
+
+    .header-left {
+        gap: 5px;
+    }
+
 
     .timezone-card {
-        min-width: 165px;
-        padding: 6px 9px;
+        min-width: 135px;
+        width: 135px;
+
+        height: 44px;
+
+        padding: 4px 7px;
     }
 
+
     .timezone-icon {
-        width: 25px;
-        height: 25px;
+        font-size: 19px;
+
+        padding: 3px 5px;
+    }
+
+
+    .timezone-label {
+        font-size: 6px;
+
+        letter-spacing: 0.8px;
+    }
+
+
+    .clock {
+        font-size: 9px;
+    }
+
+
+    /* =================================================
+       HEADER MENU
+    ================================================= */
+
+    .header-menu {
+        gap: 3px;
+    }
+
+
+    .header-button {
+        width: 36px;
+        height: 30px;
+
+        padding: 3px;
+    }
+
+
+    .button-icon {
+        font-size: 13px;
+    }
+
+
+    /* =================================================
+       RIGHT HEADER
+    ================================================= */
+
+    .right-header {
+        padding: 5px 12px;
+
+        border-radius: 10px;
+
+        border-right:
+            1px solid rgba(255, 255, 255, 0.3);
+    }
+
+
+    .travel-label {
+        font-size: 5px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 3px;
+    }
+
+
+    .logo {
+        font-size: 22px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .logo::after {
+        font-size: 12px;
+
+        right: -18px;
+
+        top: -7px;
+    }
+
+
+    .author {
+        font-size: 7px;
+
+        gap: 4px;
+
+        margin-top: 4px;
+    }
+
+
+    .author-line {
+        width: 12px;
+    }
+
+
+    /* =================================================
+       CITY LAYOUT
+    ================================================= */
+
+    .city-layout {
+
+        position: relative;
+
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 0;
+
+        padding:
+            8px 10px 0;
+    }
+
+
+    /* =================================================
+       MOBILE 3-LINE MENU BUTTON
+    ================================================= */
+
+    .mobile-city-menu-btn {
+
+        display: flex;
+
+        width: 100%;
+
+        height: 48px;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding:
+            0 15px;
+
+        border:
+            1px solid rgba(255, 209, 102, 0.55);
+
+        border-radius: 13px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255, 159, 67, 0.30),
+                rgba(255, 107, 53, 0.16)
+            );
+
+        color: #ffe6b0;
+
+        font-size: 15px;
+
+        font-weight: 700;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 5px 18px rgba(0, 0, 0, 0.25);
+
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        transition:
+            background 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.2s ease;
+
+        -webkit-tap-highlight-color:
+            transparent;
+    }
+
+
+    .mobile-city-menu-btn:active {
+        transform: scale(0.98);
+    }
+
+
+    .mobile-menu-icon {
+        font-size: 23px;
+
+        line-height: 1;
+    }
+
+
+    .mobile-menu-arrow {
+        font-size: 22px;
+
+        line-height: 1;
+
+        transition:
+            transform 0.3s ease;
+    }
+
+
+    /* Rotate arrow */
+
+    .mobile-city-menu-btn.active
+    .mobile-menu-arrow {
+        transform: rotate(180deg);
+    }
+
+
+    /* =================================================
+       MOBILE CITY PANEL
+    ================================================= */
+
+    .button-panel {
+
+        position: absolute;
+
+        top: 62px;
+
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+
+        height: auto;
+
+        max-height: 65vh;
+
+        margin: 0;
+
+        z-index: 1000;
+
+        border:
+            1px solid rgba(255, 209, 102, 0.35);
+
+        border-radius: 15px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(20, 20, 20, 0.97),
+                rgba(10, 10, 10, 0.96)
+            );
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.55);
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-10px)
+            scale(0.98);
+
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+
+    /* =================================================
+       OPEN CITY MENU
+    ================================================= */
+
+    .button-panel.mobile-open {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        pointer-events: auto;
+    }
+
+
+    /* =================================================
+       MOBILE PANEL TITLE
+    ================================================= */
+
+    .button-panel .container-title {
+
+        position: static;
+
+        display: flex;
+
+        align-items: center;
+
+        width: 100%;
+
+        height: 40px;
+
+        padding:
+            0 15px;
+
+        background:
+            rgba(255, 209, 102, 0.08);
+
+        border: none;
+
+        border-bottom:
+            1px solid rgba(255, 209, 102, 0.25);
+
+        border-radius: 0;
+
+        color: #ffd166;
+
+        font-size: 13px;
+
+        box-shadow: none;
+    }
+
+
+    /* =================================================
+       MOBILE CITY BUTTON AREA
+    ================================================= */
+
+    .button_area {
+
+        height: auto;
+
+        max-height:
+            calc(65vh - 40px);
+
+        padding: 10px;
+
+        gap: 7px;
+
+        overflow-y: auto;
+    }
+
+
+    /* =================================================
+       MOBILE CITY BUTTON
+    ================================================= */
+
+    .add-city-btn {
+
+        min-height: 48px;
+
+        width: 100%;
+
+        padding:
+            9px 12px;
+
+        border-radius: 11px;
+
+        font-size: 14px;
+
+        touch-action: manipulation;
+
+        -webkit-tap-highlight-color:
+            transparent;
+    }
+
+
+    .add-city-btn:active {
+
+        transform:
+            scale(0.97);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255, 193, 92, 0.50),
+                rgba(255, 107, 53, 0.32)
+            );
+    }
+
+
+    /* =================================================
+       MOBILE CITY ICON
+    ================================================= */
+
+    .city-button-icon {
+
+        width: 28px;
+
+        min-width: 28px;
+
+        height: 28px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background:
+            rgba(255, 209, 102, 0.12);
+
+        font-size: 15px;
+    }
+
+
+    .city-button-name {
+
+        overflow: hidden;
+
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+
+        text-align: left;
+    }
+
+
+    /* =================================================
+       MOBILE DATA CONTAINER
+    ================================================= */
+
+    .data_container {
+
+        width: 100%;
+
+        height:
+            calc(100vh - 145px);
+
+        min-height: 0;
+
+        margin:
+            10px 0 0;
+
+        padding: 13px;
+
+        border-radius: 15px;
+
+        overflow-y: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Darken content when menu is open */
+
+    .city-layout.menu-open
+    .data_container {
+
+        filter:
+            brightness(0.65);
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .header {
+        padding: 8px;
+    }
+
+
+    .timezone-card {
+        min-width: 118px;
+
+        width: 118px;
+    }
+
+
+    .timezone-icon {
+        font-size: 17px;
+    }
+
+
+    .clock {
+        font-size: 8px;
+    }
+
+
+    .header-button {
+        width: 32px;
+    }
+
+
+    .right-header {
+        padding:
+            4px 8px;
+    }
+
+
+    .logo {
+        font-size: 19px;
+    }
+
+
+    .travel-label {
+        font-size: 4px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .author {
+        font-size: 6px;
+    }
+
+
+    .mobile-city-menu-btn {
+
+        height: 46px;
+
+        font-size: 14px;
+    }
+
+
+    .data_container {
+
+        height:
+            calc(100vh - 138px);
+
+        padding: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL PHONES
+   320px - 360px
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .header {
+        padding:
+            7px 6px;
+    }
+
+
+    .timezone-card {
+
+        min-width: 108px;
+
+        width: 108px;
+
+        height: 40px;
+    }
+
+
+    .timezone-icon {
+        font-size: 16px;
+
+        padding: 2px 4px;
+    }
+
+
+    .timezone-label {
+        font-size: 5px;
+    }
+
+
+    .clock {
+        font-size: 7px;
+    }
+
+
+    .header-button {
+
+        width: 29px;
+
+        height: 28px;
+    }
+
+
+    .button-icon {
         font-size: 12px;
     }
 
-    .timezone-name {
-        font-size: 10px;
+
+    .right-header {
+
+        padding:
+            3px 6px;
     }
 
-    .clock {
-        font-size: 10px;
-    }
-
-    .header-menu {
-        gap: 4px;
-    }
-
-    .header-button {
-        padding: 5px 8px;
-        font-size: 10px;
-    }
 
     .logo {
-        font-size: 28px;
+        font-size: 17px;
     }
 
-    .album-title {
-        font-size: 16px;
-    }
-
-    .author {
-        font-size: 10px;
-    }
 
     .travel-label {
-        font-size: 7px;
+        font-size: 3.5px;
+
+        letter-spacing: 0.7px;
     }
-    .city-layout {
-        flex-direction: column;
+
+
+    .author {
+        font-size: 5.5px;
     }
-    .button-panel {
-        width: 100%;
-        height: 250px;
+
+
+    .mobile-city-menu-btn {
+
+        height: 44px;
+
+        padding:
+            0 12px;
+
+        font-size: 13px;
     }
+
+
+    .mobile-menu-icon {
+        font-size: 21px;
+    }
+
+
+    .mobile-menu-arrow {
+        font-size: 20px;
+    }
+
+
     .data_container {
-        width: 100%;
-        min-height: 400px;
+
+        height:
+            calc(100vh - 132px);
+
+        padding: 8px;
+    }
 
 }
