@@ -1,0 +1,1140 @@
+/* =========================================================
+   CITY CONTAINER
+========================================================= */
+
+.city-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CITY HEADING
+========================================================= */
+
+.city-heading {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 10px;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    text-align: right;
+}
+
+.city-icon {
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   PLACE SETTINGS CARD
+========================================================= */
+
+.place-card-setting {
+    position: relative;
+
+    margin: 15px;
+    padding: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+
+    color: white;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PLACE FORM
+========================================================= */
+
+.place-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* =========================================================
+   PLACE TITLE INPUT
+========================================================= */
+
+.place-title-input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+    font-family: inherit;
+
+    transition: all 0.25s ease;
+}
+
+.place-title-input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.place-title-input:focus {
+    border-color: rgba(255, 153, 102, 0.8);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 153, 102, 0.08);
+}
+
+
+/* =========================================================
+   PLACE TEXTAREA
+========================================================= */
+
+.place-textarea {
+    width: 100%;
+    height: 50px;
+
+    box-sizing: border-box;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    outline: none;
+
+    resize: none;
+
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: inherit;
+
+    transition: all 0.25s ease;
+}
+
+.place-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.place-textarea:focus {
+    border-color: rgba(255, 153, 102, 0.8);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 153, 102, 0.08);
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+========================================================= */
+
+.place-create-btn {
+    align-self: flex-end;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9966,
+            #ff5e62
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.25s ease;
+}
+
+.place-create-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   PLACES
+========================================================= */
+
+.places-container {
+    width: 100%;
+}
+
+
+/* =========================================================
+   PLACE CARD
+========================================================= */
+
+.place-card {
+    position: relative;
+
+    margin: 35px 15px;
+
+    padding: 25px 20px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+
+    color: white;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PLACE NAME
+========================================================= */
+
+.place-name {
+    position: absolute;
+
+    top: -14px;
+    left: 50px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 4px 8px 4px 14px;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9966,
+            #ff5e62
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.25);
+
+    max-width: calc(100% - 80px);
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    z-index: 20;
+
+    box-sizing: border-box;
+}
+
+.place-name:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   PLACE TITLE TEXT
+========================================================= */
+
+.place-title-text {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   PLACE BUTTONS
+========================================================= */
+
+.place-name button {
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 26px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   UPDATE BUTTON
+========================================================= */
+
+.place-update-btn {
+    color: #1d4ed8;
+
+    border-color: #93c5fd !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #eff6ff
+        );
+}
+
+.place-update-btn:hover {
+    color: white;
+
+    border-color: #2563eb !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    box-shadow:
+        0 5px 14px rgba(37, 99, 235, 0.35);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.place-delete-btn {
+    color: #b91c1c;
+
+    border-color: #fca5a5 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fee2e2,
+            #fff1f2
+        );
+}
+
+.place-delete-btn:hover {
+    color: white;
+
+    border-color: #dc2626 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #dc2626
+        );
+
+    box-shadow:
+        0 5px 14px rgba(220, 38, 38, 0.35);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BUTTON EFFECTS
+========================================================= */
+
+.place-name button:active {
+    transform:
+        translateY(0)
+        scale(0.97);
+}
+
+.place-name button:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.place-description {
+    display: block;
+
+    margin: 0 0 10px;
+
+    color: white;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   PLACE IMAGES
+========================================================= */
+
+.place-images {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(180px, 1fr)
+        );
+
+    gap: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    transition:
+        opacity 0.25s ease;
+}
+
+
+/* HIDE IMAGES */
+
+.place-card.images-hidden .place-images {
+    display: none;
+}
+
+
+/* =========================================================
+   ADD IMAGE
+========================================================= */
+
+.background-upload-form {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+}
+
+.add-place-image {
+    height: 120px;
+
+    border:
+        2px dashed rgba(255, 255, 255, 0.30);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: white;
+
+    transition: all 0.25s ease;
+}
+
+.add-place-image:hover {
+    background:
+        rgba(255, 255, 255, 0.11);
+
+    border-color:
+        rgba(255, 255, 255, 0.70);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.add-image-icon {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 23px;
+
+    margin-bottom: 7px;
+}
+
+.add-image-title {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 3px;
+}
+
+.add-image-text {
+    font-size: 10px;
+
+    color:
+        rgba(255, 255, 255, 0.50);
+}
+
+
+/* =========================================================
+   IMAGE ITEM
+========================================================= */
+
+.place-image-item {
+    position: relative;
+
+    height: 120px;
+
+    overflow: hidden;
+
+    border-radius: 13px;
+
+    border: 2px solid transparent;
+
+    background:
+        rgba(0, 0, 0, 0.20);
+
+    transition: all 0.25s ease;
+}
+
+.place-image-item:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.place-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.place-image-item:hover .place-image {
+    transform:
+        scale(1.07);
+}
+
+
+/* =========================================================
+   IMAGE ACTION BUTTONS
+========================================================= */
+
+.image-action-buttons {
+    position: absolute;
+
+    right: 7px;
+    bottom: 7px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.download-place-image {
+    height: 27px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background:
+        rgba(50, 130, 220, 0.90);
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+.download-place-image:hover {
+    background:
+        rgba(40, 110, 235, 0.98);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   DELETE IMAGE FORM
+========================================================= */
+
+.delete-image-form {
+    margin: 0;
+    padding: 0;
+}
+
+.remove-place-image {
+    width: auto;
+    height: 27px;
+
+    padding: 0 10px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background:
+        rgba(220, 50, 50, 0.90);
+
+    color: white;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+.remove-place-image:hover {
+    background:
+        rgba(235, 40, 40, 0.98);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   NO PLACES
+========================================================= */
+
+.no-places {
+    margin: 30px 15px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color:
+        rgba(255, 255, 255, 0.70);
+}
+
+.no-places span {
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   IMAGE POPUP
+========================================================= */
+
+.image-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    z-index: 99999;
+
+    display: none;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   POPUP BACKGROUND
+========================================================= */
+
+.image-popup-bg {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 80px;
+
+    box-sizing: border-box;
+
+    background:
+        rgba(0, 0, 0, 0.88);
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   POPUP IMAGE
+========================================================= */
+
+.image-popup-bg img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width:
+        calc(100vw - 160px);
+
+    max-height:
+        calc(100dvh - 140px);
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5);
+
+    cursor: default;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+========================================================= */
+
+.image-prev,
+.image-next {
+    position: fixed;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.20);
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        all 0.25s ease;
+
+    flex-shrink: 0;
+}
+
+.image-prev:hover,
+.image-next:hover {
+    background:
+        rgba(255, 255, 255, 0.40);
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.image-prev {
+    left: 25px;
+}
+
+.image-next {
+    right: 25px;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.image-close {
+    position: fixed;
+
+    top: 20px;
+    right: 25px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.20);
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 100002;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        all 0.25s ease;
+}
+
+.image-close:hover {
+    background:
+        rgba(255, 255, 255, 0.40);
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================================
+   IMAGE COUNTER
+========================================================= */
+
+.image-counter {
+    position: fixed;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.60);
+
+    color: white;
+
+    font-size: 14px;
+
+    z-index: 100002;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .city-heading {
+        font-size: 22px;
+
+        margin:
+            20px 15px 35px;
+    }
+
+    .city-icon {
+        font-size: 24px;
+    }
+
+    .place-card-setting {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .place-card {
+        margin:
+            35px 15px 15px;
+
+        padding:
+            25px 15px 15px;
+    }
+
+    .place-name {
+        left: 20px;
+
+        font-size: 13px;
+
+        max-width:
+            calc(100% - 40px);
+    }
+
+    .place-name button {
+        width: 28px;
+        height: 25px;
+    }
+
+    .place-images {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .image-popup-bg {
+        padding:
+            60px 45px 70px;
+    }
+
+    .image-popup-bg img {
+        max-width:
+            calc(100vw - 90px);
+
+        max-height:
+            calc(100dvh - 130px);
+
+        border-radius: 8px;
+    }
+
+    .image-prev {
+        left: 8px;
+    }
+
+    .image-next {
+        right: 8px;
+    }
+
+    .image-prev,
+    .image-next {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .image-close {
+        top: 10px;
+        right: 10px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+    .image-counter {
+        bottom: 15px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .place-images {
+        grid-template-columns: 1fr;
+    }
+
+    .place-name {
+        left: 10px;
+
+        max-width:
+            calc(100% - 20px);
+    }
+
+    .image-popup-bg {
+        padding:
+            55px 38px 65px;
+    }
+
+    .image-popup-bg img {
+        max-width:
+            calc(100vw - 76px);
+
+        max-height:
+            calc(100dvh - 120px);
+    }
+
+    .image-prev,
+    .image-next {
+        width: 38px;
+        height: 38px;
+    }
+
+    .image-prev {
+        left: 5px;
+    }
+
+    .image-next {
+        right: 5px;
+    }
+}
+
+
+/* =========================================================
+   POPUP SCROLL CONTROL
+========================================================= */
+
+body.popup-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DATA CONTAINER SCROLL CONTROL
+========================================================= */
+
+.data_container.disable-scroll {
+    overflow: hidden !important;
+}
