@@ -1,0 +1,349 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css_folder/city.css') }}">
+
+<div class="city-container">
+
+    <!-- =========================
+         CITY HEADING
+    ========================== -->
+    <div class="city-heading">
+        <span>{{ selected_city.name_of_city }}</span>
+        <span class="city-icon">🏙️</span>
+    </div>
+
+
+    <!-- =========================
+         ADD PLACE
+    ========================== -->
+    <div class="place-card-setting">
+
+        <form
+            action="{{ url_for('create_place') }}"
+            method="POST"
+            class="place-form"
+        >
+
+            <input
+                type="hidden"
+                name="city_name"
+                value="{{ selected_city.name_of_city }}"
+            >
+
+            <input
+                type="text"
+                name="place_name"
+                class="place-title-input"
+                placeholder="Place Name"
+                autocomplete="off"
+                required
+            >
+
+            <textarea
+                name="about_place"
+                class="place-textarea"
+                placeholder="Tell us about this place..."
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="place-create-btn"
+            >
+                <span>✓</span>
+                <span>Add Place</span>
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- =========================
+         PLACES
+    ========================== -->
+
+    <div class="places-container">
+
+        {% if selected_city.places %}
+
+            {% for place in selected_city.places %}
+
+                {% set current_place_index = loop.index0 %}
+
+                <div class="place-card">
+
+
+                    <!-- =========================
+                         PLACE NAME + BUTTONS
+                    ========================== -->
+
+                    <div
+                        class="place-name"
+                        onclick="togglePlace(this)"
+                        title="{{ place.get('place_name', 'Unknown Place') }}"
+                    >
+
+                        <span class="place-title-text">
+                            📍 {{ place.get('place_name', 'Unknown Place') }}
+                        </span>
+
+
+                        <!-- UPDATE -->
+                        <button
+                            type="button"
+                            class="place-update-btn"
+                            onclick="updatePlace(event, {{ current_place_index }})"
+                            title="Update Place"
+                        >
+                            ✏️
+                        </button>
+
+
+                        <!-- DELETE -->
+                        <button
+                            type="button"
+                            class="place-delete-btn"
+                            onclick="deletePlace(event, {{ current_place_index }})"
+                            title="Delete Place"
+                        >
+                            🗑️
+                        </button>
+
+                    </div>
+
+
+                    <!-- =========================
+                         DESCRIPTION
+                    ========================== -->
+
+                    <p class="place-description">
+                        {{ place.get('description', 'No description available.') }}
+                    </p>
+
+
+                    <!-- =========================
+                         IMAGES
+                    ========================== -->
+
+                    <div class="place-images">
+
+
+                        <!-- ADD IMAGE -->
+
+                        <form
+                            action="{{ url_for('image_upload') }}"
+                            method="POST"
+                            enctype="multipart/form-data"
+                            class="background-upload-form"
+                        >
+
+                            <input
+                                type="hidden"
+                                name="city_name"
+                                value="{{ selected_city.name_of_city }}"
+                            >
+
+                            <input
+                                type="hidden"
+                                name="place_index"
+                                value="{{ current_place_index }}"
+                            >
+
+
+                            <label class="add-place-image">
+
+                                <div class="add-image-icon">
+                                    ＋
+                                </div>
+
+                                <div class="add-image-title">
+                                    Add Images
+                                </div>
+
+                                <div class="add-image-text">
+                                    JPG, PNG, WEBP or GIF
+                                </div>
+
+
+                                <input
+                                    type="file"
+                                    name="place_images"
+                                    accept=".jpg,.jpeg,.png,.webp,.gif"
+                                    multiple
+                                    hidden
+                                    onchange="this.form.submit()"
+                                >
+
+                            </label>
+
+                        </form>
+
+
+                        <!-- EXISTING IMAGES -->
+
+                        {% if place.get('images') %}
+
+                            {% for image in place.get('images', []) %}
+
+                                {% set current_image_index = loop.index0 %}
+
+                                <div class="place-image-item">
+
+                                    <img
+                                        src="{{ url_for('static', filename=image) }}"
+                                        alt="{{ place.get('place_name', 'Place') }}"
+                                        class="place-image"
+                                        onclick="openImage(this)"
+                                    >
+
+
+                                    <!-- IMAGE ACTIONS -->
+
+                                    <div class="image-action-buttons">
+
+
+                                        <!-- DOWNLOAD -->
+
+                                        <a
+                                            href="{{ url_for('download_place_image', filename=image) }}"
+                                            class="download-place-image"
+                                            title="Download Image"
+                                            onclick="event.stopPropagation();"
+                                        >
+                                            ⬇
+                                        </a>
+
+
+                                        <!-- DELETE IMAGE -->
+
+                                        <form
+                                            action="{{ url_for('delete_place_image') }}"
+                                            method="POST"
+                                            class="delete-image-form"
+                                            onsubmit="return confirm('Are you sure you want to delete this image?');"
+                                        >
+
+                                            <input
+                                                type="hidden"
+                                                name="city_name"
+                                                value="{{ selected_city.name_of_city }}"
+                                            >
+
+                                            <input
+                                                type="hidden"
+                                                name="place_index"
+                                                value="{{ current_place_index }}"
+                                            >
+
+                                            <input
+                                                type="hidden"
+                                                name="image_index"
+                                                value="{{ current_image_index }}"
+                                            >
+
+                                            <button
+                                                type="submit"
+                                                class="remove-place-image"
+                                                title="Delete Image"
+                                                onclick="event.stopPropagation();"
+                                            >
+                                                🗑
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            {% endfor %}
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <div class="no-places">
+
+                <span>📍</span>
+
+                <p>
+                    No places added yet.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     IMAGE POPUP
+========================================================= -->
+
+<div
+    id="imagePopup"
+    class="image-popup"
+>
+
+    <div
+        class="image-popup-bg"
+        onclick="closeImagePopup(event)"
+    >
+
+        <button
+            type="button"
+            class="image-prev"
+            onclick="previousImage(event)"
+        >
+            ❮
+        </button>
+
+
+        <img
+            id="popupImage"
+            src=""
+            alt="Preview"
+            onclick="event.stopPropagation()"
+        >
+
+
+        <button
+            type="button"
+            class="image-next"
+            onclick="nextImage(event)"
+        >
+            ❯
+        </button>
+
+
+        <button
+            type="button"
+            class="image-close"
+            onclick="closeImagePopup(event)"
+        >
+            ×
+        </button>
+
+
+        <div
+            id="imageCounter"
+            class="image-counter"
+        >
+            1 / 1
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script_folder/city.js') }}"></script>
