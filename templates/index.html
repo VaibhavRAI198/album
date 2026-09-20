@@ -36,24 +36,106 @@
             </div>
         </div>
     </header>
-    <!-- =================================================
-         CITY AREA
-    ================================================== -->
-    <div class="city-layout">
-        <div class="button-panel">
-            <span class="container-title">Visited City</span>
-            <div class="button_area">
-            <button type="button" class="add-city-btn" onclick="window.location.href='{{ url_for('add_city') }}'">
+<!-- =================================================
+     CITY AREA
+================================================== -->
+<div class="city-layout">
+
+    <!-- MOBILE MENU BUTTON -->
+    <button type="button"
+            class="mobile-city-menu-btn"
+            onclick="toggleCityMenu()">
+        <span class="mobile-menu-icon">☰</span>
+        <span>Visited City</span>
+        <span class="mobile-menu-arrow">⌄</span>
+    </button>
+
+    <!-- CITY PANEL -->
+    <div class="button-panel" id="cityPanel">
+
+        <span class="container-title">Visited City</span>
+
+        <div class="button_area">
+
+            <!-- ADD CITY -->
+            <button type="button"
+                    class="add-city-btn"
+                    onclick="window.location.href='{{ url_for('add_city') }}'">
+
                 <span class="plus-icon">+</span>
                 <span>Add City Name</span>
+
             </button>
+
+            <!-- CITY LIST -->
             {% for city in city_name %}
-                <button type="button" class="add-city-btn" onclick="window.location.href='{{ url_for('city', city_name=city.name_of_city) }}'">
-                    <span>{{ city.name_of_city }}</span>
+
+                <button type="button"
+                        class="add-city-btn"
+                        onclick="window.location.href='{{ url_for('city', city_name=city.name_of_city) }}'">
+
+                    <span class="city-button-icon">📍</span>
+                    <span class="city-button-name">
+                        {{ city.name_of_city }}
+                    </span>
+
                 </button>
+
             {% endfor %}
-            </div>
+
         </div>
+    </div>
+
+    <!-- RIGHT DATA CONTAINER -->
+    <div class="data_container">
+
+        {% if section == "aboutme" %}
+
+            <div id="aboutme">
+                {% include "html_files/aboutme.html" %}
+            </div>
+
+        {% elif section == "setting" %}
+
+            <div id="setting">
+                {% include "html_files/setting.html" %}
+            </div>
+
+        {% elif section == "add_place" %}
+
+            <div id="add_place">
+                {% include "html_files/add_place.html" %}
+            </div>
+
+        {% elif section == "city" %}
+
+            <div id="city">
+                {% include "html_files/city.html" %}
+            </div>
+
+        {% elif section == "add_city" %}
+
+            <div id="add_city">
+                {% include "html_files/add_city.html" %}
+            </div>
+
+        {% else %}
+
+            <div id="welcome">
+
+                <div class="welcome-content">
+                    <h1>Welcome to Musafir</h1>
+                    <p>Start your travel journey</p>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
         <!-- =================================================
              RIGHT DATA CONTAINER
         ================================================== -->
@@ -158,6 +240,7 @@
 </div>
 <script src="{{ url_for( 'static', filename='script_folder/login.js' ) }}" ></script>
 <script src="{{ url_for( 'static', filename='script_folder/time_script.js' ) }}"></script>
+<script src="{{ url_for('static', filename='script_folder/city_menu.js') }}"></script>
 </body>
 
 </html>
